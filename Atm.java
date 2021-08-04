@@ -1,4 +1,0 @@
-interface Atm
-{
-void connectBankDB();
-}
