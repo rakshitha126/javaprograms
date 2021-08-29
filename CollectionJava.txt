@@ -1,8 +1,0 @@
-Collection in java
-* class Stack extends Vector
-* class Vector implements List,RandomAccess,Clonable,java.io.Serializable
-* class ArrayList implements List,RandomAccess,Cloneable,java.io.Serializable
-* class LinkedList implements List,Deque,Clonable,java.io.Serializable
-* class HashSet implements Set,Clonable,java.io.Serializable
-* class LinkedHashSet implements Set,Clonable,java.io.Serializable
-* class TreeSet implements NavigableSet,Cloneable,java.io.Serializable
