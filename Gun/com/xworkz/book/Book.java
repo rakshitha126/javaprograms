@@ -1,16 +1,17 @@
-package com.xworkz.gun;
+package com.xworkz.book;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class Tester {
+import com.xworkz.gun.Tester;
+
+public class Book {
 
 	public static void main(String[] args) {
-		
 		Tester.save();
-		//Tester.update();
+		Tester.update();
 		Tester.delete();
 	}
 	
@@ -23,8 +24,8 @@ public class Tester {
 			//3.Create Statement
 			Statement statement = con.createStatement();
 			//4.Execute statement
-			boolean saved=statement.execute("insert into gun_details values(8,'APW',1500000)");
-			//boolean saved=statement.execute("insert into gun_details values(9,'ak47',250000)");
+			//boolean saved=statement.execute("insert into gun_details values(8,'APW',1500000)");
+			boolean saved=statement.execute("insert into gun_details values(9,'ak47',250000)");
 			if(saved == false) {
 				System.out.println("Data saved");
 			}else {
@@ -38,7 +39,7 @@ public class Tester {
 		}
 	}
 	
-	/*public static void update() {
+	public static void update() {
 		
 		try {
 		//Class.forName("com.mysql.cj.jdbc.Driver");
@@ -55,12 +56,12 @@ public class Tester {
 			e.printStackTrace();
 		}
 	
-	}*/
+	}
 	
 	public static void delete() {
 		
 		try {
-		Class.forName("com.mysql.cj.jdbc.Driver");
+		//Class.forName("com.mysql.cj.jdbc.Driver");
 		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc", "root", "root");
 		Statement stat = connection.createStatement();
 		boolean deleted = stat.execute("Delete from gun_details where gun_id =9");
@@ -69,10 +70,13 @@ public class Tester {
 		}else {
 			System.out.println("Data not deleted");
 		}
-		}catch(ClassNotFoundException | SQLException e) {
+		}catch(SQLException e) {
 			e.printStackTrace();
 		}
 		
 	}
 
-}
+
+	}
+
+
